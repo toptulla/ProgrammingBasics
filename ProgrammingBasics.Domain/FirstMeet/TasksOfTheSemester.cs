@@ -64,8 +64,8 @@ namespace ProgrammingBasics.Domain.FirstMeet
         public int GetCountNumbersLessN(int n, int x, int y)
         {
             int count = 0;
-            for (int i = 0; i < n; i++)
-                if (i % x == 0 && i % y == 0)
+            for (int i = 1; i < n; i++)
+                if (i % x == 0 || i % y == 0)
                     count++;
 
             return count;

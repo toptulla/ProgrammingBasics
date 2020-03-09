@@ -77,9 +77,9 @@ namespace ProgrammingBasics.Tests.FirstMeet
         {
             var task = new TasksOfTheSemester();
 
-            var result = task.GetCountNumbersLessN(50, 3, 5);
+            var result = task.GetCountNumbersLessN(16, 3, 5);
 
-            Assert.Equal<int>(4, result);
+            Assert.Equal<int>(7, result);
         }
         #endregion
 
