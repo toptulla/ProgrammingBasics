@@ -27,9 +27,41 @@ namespace ProgrammingBasics.Tests.FirstMeet
         }
         #endregion
 
+        #region Task 3
+        [Fact]
+        public void GetAngelBetweenHourAndMinuteHandSimpleTest15()
+        {
+            var task = new TasksOfTheSemester();
+
+            var result = task.GetAngelBetweenHourAndMinuteHand(15);
+
+            Assert.Equal<int>(90, result);
+        }
+
+        [Fact]
+        public void GetAngelBetweenHourAndMinuteHandSimpleTest9()
+        {
+            var task = new TasksOfTheSemester();
+
+            var result = task.GetAngelBetweenHourAndMinuteHand(9);
+
+            Assert.Equal<int>(90, result);
+        }
+
+        [Fact]
+        public void GetAngelBetweenHourAndMinuteHandSimpleTest0()
+        {
+            var task = new TasksOfTheSemester();
+
+            var result = task.GetAngelBetweenHourAndMinuteHand(20);
+
+            Assert.Equal<int>(120, result);
+        }
+        #endregion
+
         #region Task 4
         [Fact]
-        public void GetCountNumbersLessN()
+        public void GetCountNumbersLessNSimpleTest()
         {
             var task = new TasksOfTheSemester();
 

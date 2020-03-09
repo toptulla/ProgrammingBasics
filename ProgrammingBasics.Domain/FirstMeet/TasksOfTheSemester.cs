@@ -29,6 +29,17 @@ namespace ProgrammingBasics.Domain.FirstMeet
         }
 
         /// <summary>
+        /// Вычислить угол в градусах между часовой и минутной стрелками. Не использовать циклы.
+        /// </summary>
+        /// <param name="h">Время h часов.</param>
+        /// <returns>Угол.</returns>
+        public int GetAngelBetweenHourAndMinuteHand(int h)
+        {
+            var angel = (h % 12) * 30;
+            return angel <= 180 ? angel : 360 - angel;
+        }
+
+        /// <summary>
         /// Найти количество чисел меньших N, которые имеют простые делители X или Y.
         /// </summary>
         /// <param name="n">N.</param>
