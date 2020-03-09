@@ -8,6 +8,9 @@ namespace ProgrammingBasics.Domain.FirstMeet
         /// Как поменять местами значения двух переменных?
         /// Можно ли это сделать без ещё одной временной переменной. Стоит ли так делать?
         /// </summary>
+        /// <param name="x">Первое число.</param>
+        /// <param name="y">Второе число.</param>
+        /// <returns>(Первое число, Второе число)</returns>
         public (uint X, uint Y) SwapNaturalNumbersWithoutTmp(uint x, uint y)
         {
             /*
@@ -26,8 +29,25 @@ namespace ProgrammingBasics.Domain.FirstMeet
         }
 
         /// <summary>
+        /// Найти количество високосных лет на отрезке [a, b] не используя циклы.
+        /// (по Григорианскому календарю)
+        /// </summary>
+        /// <returns>Количество високосных лет.</returns>
+        public int CountLeapYears(int from, int to)
+        {
+            int fromCount = from / 400 - from / 100 + from / 4;
+            int toCount = to / 400 - to / 100 + to / 4;
+
+            return toCount - fromCount;
+        }
+
+        /// <summary>
         /// Посчитать расстояние от точки до прямой, заданной двумя разными точками.
         /// </summary>
+        /// <param name="point">Точка.</param>
+        /// <param name="pointA">Одна из точек прямой.</param>
+        /// <param name="pointB">Одна из точек прямой.</param>
+        /// <returns>Расстояние от точки до прямой.</returns>
         public double CalcPathFormPointToLine((int x, int y) point, (int x, int y) pointA, (int x, int y) pointB)
         {
             /*

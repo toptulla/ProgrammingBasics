@@ -27,8 +27,19 @@ namespace ProgrammingBasics.Tests.FirstMeet
         }
         #endregion
 
-        #region Task 6
+        #region Task 5
+        [Fact]
+        public void CountLeapYearsSimpleTest()
+        {
+            var task = new TasksOfTheSemester();
 
+            var result = task.CountLeapYears(2019, 2021);
+
+            Assert.Equal<int>(1, result);
+        }
+        #endregion
+
+        #region Task 6
         [Fact]
         public void CalcPathFormPointToLineSimpleTest()
         {
