@@ -29,6 +29,21 @@ namespace ProgrammingBasics.Domain.FirstMeet
         }
 
         /// <summary>
+        /// Задается натуральное трехзначное число (гарантируется, что трехзначное).
+        /// Развернуть его, т.е. получить трехзначное число, записанное теми же цифрами в обратном порядке.
+        /// </summary>
+        /// <param name="number">Трехзначаное число</param>
+        /// <returns>Трехзначное число в обратном порядке.</returns>
+        public int RevertNumber(int number)
+        {
+            var first = number / 100;
+            var middle = (number - first * 100)/10;
+            var last = number % 10;
+
+            return last * 100 + middle * 10 + first;
+        }
+
+        /// <summary>
         /// Вычислить угол в градусах между часовой и минутной стрелками. Не использовать циклы.
         /// </summary>
         /// <param name="h">Время h часов.</param>

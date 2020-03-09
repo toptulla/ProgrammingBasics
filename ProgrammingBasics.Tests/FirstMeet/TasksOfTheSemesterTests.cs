@@ -27,6 +27,18 @@ namespace ProgrammingBasics.Tests.FirstMeet
         }
         #endregion
 
+        #region Task 2
+        [Fact]
+        public void RevertNumberSimpleTest()
+        {
+            var task = new TasksOfTheSemester();
+
+            var result = task.RevertNumber(123);
+
+            Assert.Equal<int>(321, result);
+        }
+        #endregion
+
         #region Task 3
         [Fact]
         public void GetAngelBetweenHourAndMinuteHandSimpleTest15()
