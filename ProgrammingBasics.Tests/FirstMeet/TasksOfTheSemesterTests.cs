@@ -27,6 +27,18 @@ namespace ProgrammingBasics.Tests.FirstMeet
         }
         #endregion
 
+        #region Task 4
+        [Fact]
+        public void GetCountNumbersLessN()
+        {
+            var task = new TasksOfTheSemester();
+
+            var result = task.GetCountNumbersLessN(50, 3, 5);
+
+            Assert.Equal<int>(4, result);
+        }
+        #endregion
+
         #region Task 5
         [Fact]
         public void CountLeapYearsSimpleTest()

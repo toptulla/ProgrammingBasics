@@ -29,6 +29,23 @@ namespace ProgrammingBasics.Domain.FirstMeet
         }
 
         /// <summary>
+        /// Найти количество чисел меньших N, которые имеют простые делители X или Y.
+        /// </summary>
+        /// <param name="n">N.</param>
+        /// <param name="x">Простое X.</param>
+        /// <param name="y">Простое Y.</param>
+        /// <returns>Количество чисел.</returns>
+        public int GetCountNumbersLessN(int n, int x, int y)
+        {
+            int count = 0;
+            for (int i = 0; i < n; i++)
+                if (i % x == 0 && i % y == 0)
+                    count++;
+
+            return count;
+        }
+
+        /// <summary>
         /// Найти количество високосных лет на отрезке [a, b] не используя циклы.
         /// (по Григорианскому календарю)
         /// </summary>
