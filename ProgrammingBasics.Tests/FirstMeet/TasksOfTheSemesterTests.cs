@@ -101,9 +101,33 @@ namespace ProgrammingBasics.Tests.FirstMeet
         {
             var task = new TasksOfTheSemester();
 
-            var result = task.CalcPathFormPointToLine((2, 2), (4, 1), (1, 1));
+            var result = task.CalcPathFormPointToLine((2, 2), (1, 1), (3, 1));
 
             Assert.Equal<double>(1, result);
+        }
+        #endregion
+
+        #region Task 8
+        [Fact]
+        public void GetIntersectionPointSimpleTest0()
+        {
+            var task = new TasksOfTheSemester();
+
+            var result = task.GetIntersectionPoint((2, 2), (0, 2), (2, 0));
+
+            Assert.Equal<double>(1, result.x);
+            Assert.Equal<double>(1, result.y);
+        }
+
+        [Fact]
+        public void GetIntersectionPointSimpleTest1()
+        {
+            var task = new TasksOfTheSemester();
+
+            var result = task.GetIntersectionPoint((2, 2), (1, 1), (3, 1));
+
+            Assert.Equal<double>(2, result.x);
+            Assert.Equal<double>(1, result.y);
         }
         #endregion
     }

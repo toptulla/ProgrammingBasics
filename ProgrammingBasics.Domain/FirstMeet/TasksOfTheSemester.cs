@@ -110,5 +110,66 @@ namespace ProgrammingBasics.Domain.FirstMeet
 
             return Math.Abs(a * point.x + b * point.y + c) / Math.Sqrt(a * a + b * b);
         }
+
+        /// <summary>
+        /// Дана прямая L и точка A.
+        /// Найти точку пересечения прямой L с перпендикулярной ей прямой P, проходящей через точку A.
+        /// Прямая задана двумя точками.
+        /// </summary>
+        /// <param name="point">Точка.</param>
+        /// <param name="pointA">Одна из точек прямой.</param>
+        /// <param name="pointB">Одна из точек прямой.</param>
+        /// <returns>Точка пересечения.</returns>
+        public (double x, double y) GetIntersectionPoint((int x, int y) point, (int x, int y) pointA, (int x, int y) pointB)
+        {
+            /*
+             * 1. Найти уравнение прямой по двум точкам.
+             * A*x+By+C
+             * A = y1-y2
+             * B = x2-x1
+             * C = x1*y2-y1*x2
+             * 
+             * 2. Компоненты нормального для прямой вектора = (A, B)
+             * Этот вектор также является направляющим для прямой перпендикулярной данной.
+             * Зная это и координаты точки лежащей на прямой, для которой этот вектор является
+             * направляющим, можно выразить компоненты A1, B1 и C1 уравнения этой прямой.
+             * (x-px)/A = (y-py)/B => B*x+(-A)*y+(A*py-B*px)=0
+             * A1 = B
+             * B1 = -A
+             * C1 = A*py-B*px
+             * 
+             * 3. Решить СЛАУ
+             * Решение - точка пересечения прямых.
+            */
+
+            int a = pointA.y - pointB.y;
+            int b = pointB.x - pointA.x;
+            int c = pointA.x * pointB.y - pointA.y * pointB.x;
+
+            int a1 = b;
+            int b1 = -a;
+            int c1 = a * point.y - b * point.x;
+
+            double x = 0;
+            double y = 0;
+
+            if (a == 0)
+            {
+                y = -c / b;
+                x = -c1 / a1;
+            }
+            else if (b == 0)
+            {
+                x = -c / a;
+                y = -c1 / b1;
+            }
+            else
+            {
+                y = (a1 * c - a * c1) / (a * b1 - a1 * b);
+                x = (-b * y - c) / a;
+            }
+
+            return (x, y);
+        }
     }
 }
