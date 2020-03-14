@@ -12,4 +12,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ProgrammingBasics.Domain\ProgrammingBasics.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
