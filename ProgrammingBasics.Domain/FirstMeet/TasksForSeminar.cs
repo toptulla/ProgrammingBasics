@@ -2,7 +2,7 @@
 
 namespace ProgrammingBasics.Domain.FirstMeet
 {
-    public class TasksOfTheSemester
+    public class TasksForSeminar
     {
         /// <summary>
         /// Как поменять местами значения двух переменных?

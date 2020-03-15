@@ -4,13 +4,13 @@ using Xunit;
 
 namespace ProgrammingBasics.Tests.FirstMeet
 {
-    public class TasksOfTheSemesterTests
+    public class TasksForSeminarTests
     {
         #region Task 1
         [Fact]
         public void SwapNaturalNumbersWithoutTmpSimpleTest()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             var result = task.SwapNaturalNumbersWithoutTmp(x: 10, y: 20);
 
@@ -21,7 +21,7 @@ namespace ProgrammingBasics.Tests.FirstMeet
         [Fact]
         public void SwapNaturalNumbersWithoutTmpMaxIntTest()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             Assert.Throws<OverflowException>(() => task.SwapNaturalNumbersWithoutTmp(x: uint.MaxValue, y: 20));
         }
@@ -31,7 +31,7 @@ namespace ProgrammingBasics.Tests.FirstMeet
         [Fact]
         public void RevertNumberSimpleTest()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             var result = task.RevertNumber(123);
 
@@ -43,7 +43,7 @@ namespace ProgrammingBasics.Tests.FirstMeet
         [Fact]
         public void GetAngelBetweenHourAndMinuteHandSimpleTest15()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             var result = task.GetAngelBetweenHourAndMinuteHand(15);
 
@@ -53,7 +53,7 @@ namespace ProgrammingBasics.Tests.FirstMeet
         [Fact]
         public void GetAngelBetweenHourAndMinuteHandSimpleTest9()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             var result = task.GetAngelBetweenHourAndMinuteHand(9);
 
@@ -63,7 +63,7 @@ namespace ProgrammingBasics.Tests.FirstMeet
         [Fact]
         public void GetAngelBetweenHourAndMinuteHandSimpleTest0()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             var result = task.GetAngelBetweenHourAndMinuteHand(20);
 
@@ -75,7 +75,7 @@ namespace ProgrammingBasics.Tests.FirstMeet
         [Fact]
         public void GetCountNumbersLessNSimpleTest()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             var result = task.GetCountNumbersLessN(16, 3, 5);
 
@@ -87,7 +87,7 @@ namespace ProgrammingBasics.Tests.FirstMeet
         [Fact]
         public void CountLeapYearsSimpleTest()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             var result = task.CountLeapYears(2019, 2021);
 
@@ -99,7 +99,7 @@ namespace ProgrammingBasics.Tests.FirstMeet
         [Fact]
         public void CalcPathFormPointToLineSimpleTest()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             var result = task.CalcPathFormPointToLine((2, 2), (1, 1), (3, 1));
 
@@ -111,7 +111,7 @@ namespace ProgrammingBasics.Tests.FirstMeet
         [Fact]
         public void GetIntersectionPointSimpleTest0()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             var result = task.GetIntersectionPoint((2, 2), (0, 2), (2, 0));
 
@@ -122,7 +122,7 @@ namespace ProgrammingBasics.Tests.FirstMeet
         [Fact]
         public void GetIntersectionPointSimpleTest1()
         {
-            var task = new TasksOfTheSemester();
+            var task = new TasksForSeminar();
 
             var result = task.GetIntersectionPoint((2, 2), (1, 1), (3, 1));
 
