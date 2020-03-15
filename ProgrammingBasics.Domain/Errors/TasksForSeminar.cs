@@ -1,4 +1,6 @@
-﻿namespace ProgrammingBasics.Domain.Errors
+﻿using System;
+
+namespace ProgrammingBasics.Domain.Errors
 {
     public class TasksForSeminar
     {
@@ -32,6 +34,25 @@
             var s15 = ((2 * 15 + 15 * (n15 - 1)) / 2) * n15;
 
             return s3 + s5 - s15;
+        }
+
+        /// <summary>
+        /// Вычислить угол в градусах между часовой и минутной стрелками. Не использовать циклы.
+        /// </summary>
+        /// <param name="hourCount">Время - часов.</param>
+        /// <param name="minCount">Время - минут.</param>
+        /// <returns>Угол.</returns>
+        public double GetAngelBetweenHourAndMinuteHand(int hourCount, int minCount)
+        {
+            // Одна минута на часах - это 6 градусов
+            double mAngel12 = minCount * 6;
+
+            // Сдвиг на одну минуту часовой стрелки - это 1/2 градуса
+            double hAngel12 = (hourCount % 12) * 30 + minCount * 1 / 2;
+
+            var result = Math.Abs(mAngel12 - hAngel12);
+
+            return result <= 180 ? result : 360 - result;
         }
     }
 }
