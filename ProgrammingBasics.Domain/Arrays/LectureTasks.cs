@@ -88,6 +88,11 @@ namespace ProgrammingBasics.Domain.Arrays
                 _ => throw new ArgumentException(nameof(suit))
             };
 
+        /// <summary>
+        /// Крестики-нолики
+        /// </summary>
+        /// <param name="field">Поле игры.</param>
+        /// <returns>Результат игры.</returns>
         public GameResult GetGameResult(Mark[,] field)
         {
             bool circleCheck = CheckMarkToWin(field, Mark.Circle);
@@ -105,6 +110,12 @@ namespace ProgrammingBasics.Domain.Arrays
             return GameResult.Draw;
         }
 
+        /// <summary>
+        /// Проверка значения (крестик/нолик) на выигрыш.
+        /// </summary>
+        /// <param name="field">Поле игры.</param>
+        /// <param name="mark">Проверяемое на выигрыш значение (крестик/нолик).</param>
+        /// <returns>Выигрыш/нет выигрыша.</returns>
         private bool CheckMarkToWin(Mark[,] field, Mark mark)
         {
             for (int i = 0; i < field.GetLength(0); i++)
@@ -118,6 +129,13 @@ namespace ProgrammingBasics.Domain.Arrays
             return CheckLeftToRightDiagonal(field, mark) || CheckRightToLeftDiagonal(field, mark);
         }
 
+        /// <summary>
+        /// Проверка выигрышного результата в строке.
+        /// </summary>
+        /// <param name="field">Поле игры.</param>
+        /// <param name="mark">Проверяемое на выигрыш значение (крестик/нолик).</param>
+        /// <param name="rowIndex">Индекс строки в поле.</param>
+        /// <returns>Выигрыш/нет выигрыша.</returns>
         private bool CheckRow(Mark[,] field, Mark mark, int rowIndex)
         {
             for (int i = 0; i < field.GetLength(1); i++)
@@ -127,6 +145,13 @@ namespace ProgrammingBasics.Domain.Arrays
             return true;
         }
 
+        /// <summary>
+        /// Проверка выигрышного результата в столбце.
+        /// </summary>
+        /// <param name="field">Поле игры.</param>
+        /// <param name="mark">Проверяемое на выигрыш значение (крестик/нолик).</param>
+        /// <param name="colIndex">Индекс столбца в поле.</param>
+        /// <returns>Выигрыш/нет выигрыша.</returns>
         private bool CheckColumn(Mark[,] field, Mark mark, int colIndex)
         {
             for (int i = 0; i < field.GetLength(0); i++)
@@ -136,6 +161,12 @@ namespace ProgrammingBasics.Domain.Arrays
             return true;
         }
 
+        /// <summary>
+        /// Проверка выигрышного результата в диагонали слева - на право.
+        /// </summary>
+        /// <param name="field">Поле игры.</param>
+        /// <param name="mark">Проверяемое на выигрыш значение (крестик/нолик).</param>
+        /// <returns>Выигрыш/нет выигрыша.</returns>
         private bool CheckLeftToRightDiagonal(Mark[,] field, Mark mark)
         {
             for (int i = 0, j = 0; i < field.GetLength(0) && j < field.GetLength(1); i++, j++)
@@ -145,6 +176,12 @@ namespace ProgrammingBasics.Domain.Arrays
             return true;
         }
 
+        /// <summary>
+        /// Проверка выигрышного результата в диагонали справа - на лево.
+        /// </summary>
+        /// <param name="field">Поле игры.</param>
+        /// <param name="mark">Проверяемое на выигрыш значение (крестик/нолик).</param>
+        /// <returns>Выигрыш/нет выигрыша.</returns>
         private bool CheckRightToLeftDiagonal(Mark[,] field, Mark mark)
         {
             for (int i = 0, j = field.GetLength(1) - 1; i < field.GetLength(0) && j > -1; i++, j--)
@@ -155,6 +192,9 @@ namespace ProgrammingBasics.Domain.Arrays
         }
     }
 
+    /// <summary>
+    /// Масти карт.
+    /// </summary>
     public enum Suits
     {
         Wands,
@@ -163,6 +203,9 @@ namespace ProgrammingBasics.Domain.Arrays
         Swords
     }
 
+    /// <summary>
+    /// Значения поля (не занято/крестик/нолик).
+    /// </summary>
     public enum Mark
     {
         Empty,
@@ -170,6 +213,9 @@ namespace ProgrammingBasics.Domain.Arrays
         Circle
     }
 
+    /// <summary>
+    /// Результат игры в крестики-нолики.
+    /// </summary>
     public enum GameResult
     {
         CrossWin,
